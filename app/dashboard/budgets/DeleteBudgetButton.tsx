@@ -2,11 +2,19 @@
 
 import { useState, useTransition } from 'react'
 import { deleteBudget } from './actions'
+import { useRouter } from 'next/navigation'
 
-export default function DeleteBudgetButton({ budgetId }: { budgetId: string }) {
+export default function DeleteBudgetButton({
+  budgetId,
+  redirectTo,
+}: {
+  budgetId: string
+  redirectTo?: string
+}) {
   const [isPending, startTransition] = useTransition()
   const [error, setError] = useState<string | null>(null)
   const [confirming, setConfirming] = useState(false)
+  const router = useRouter()
 
   function handleDelete() {
     setError(null)
@@ -15,6 +23,9 @@ export default function DeleteBudgetButton({ budgetId }: { budgetId: string }) {
       if (result?.error) {
         setError(result.error)
         setConfirming(false)
+      } else if (redirectTo) {
+        router.push(redirectTo)
+        router.refresh()
       }
     })
   }
