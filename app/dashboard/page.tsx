@@ -20,12 +20,20 @@ export default async function DashboardPage() {
 
       <SummaryCards />
 
-      <Link
-        href="/dashboard/transactions"
-        className="inline-block bg-blue-600 text-white px-4 py-2 rounded"
-      >
-        Kelola Transaksi
-      </Link>
+      <div className="flex gap-3">
+        <Link
+          href="/dashboard/transactions"
+          className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Kelola Transaksi
+        </Link>
+        <Link
+          href="/dashboard/budgets"
+          className="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+        >
+          Kelola Budget
+        </Link>
+      </div>
     </div>
   )
 }
