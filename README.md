@@ -13,7 +13,18 @@ DUITku dirancang khusus untuk mahasiswa yang ingin mengelola keuangan pribadinya
 - Programmer 3: Revanska Muhammad Athallah
 
 ## User Story
+## User Story — Budget Bulanan
 
+Sebagai pengembang, saya ingin memastikan dashboard, manajemen transaksi, dan filter sudah melakukan update data tanpa reload halaman penuh, sehingga fitur budget bulanan dapat dibangun di atas pola interaksi yang konsisten dan responsif.
+
+Sebagai pengguna, saya ingin menetapkan nominal anggaran pengeluaran untuk bulan tertentu, sehingga saya memiliki batas acuan dalam mengelola pengeluaran bulanan saya.
+
+Sebagai pengguna, saya ingin dapat mengubah atau menghapus anggaran bulanan yang telah saya buat, sehingga saya dapat menyesuaikan anggaran apabila ada perubahan rencana keuangan.
+
+Sebagai pengguna, saya ingin melihat daftar anggaran bulanan yang pernah saya buat, sehingga saya dapat meninjau kebiasaan pengelolaan anggaran saya dari bulan ke bulan.
+
+
+Sebagai pengguna, saya ingin melihat perbandingan antara total pengeluaran bulan ini dengan anggaran yang telah saya tetapkan, sehingga saya dapat mengetahui apakah pengeluaran saya masih sesuai batas atau sudah melampauinya.
 ## Software Requirement Specification (SRS)
 ## SRS-C: Budget Bulanan
 
