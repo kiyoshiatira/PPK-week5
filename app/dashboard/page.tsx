@@ -3,6 +3,7 @@ import Link from 'next/link'
 import LogoutButton from './logout-button'
 import ThemeToggle from './theme-toggle'
 import SummaryCards from './summary-cards'
+import BudgetUsage from './budget-usage'
 
 export default async function DashboardPage() {
   const cookieStore = await cookies()
@@ -19,6 +20,7 @@ export default async function DashboardPage() {
       </div>
 
       <SummaryCards />
+      <BudgetUsage />
 
       <div className="flex gap-3">
         <Link
