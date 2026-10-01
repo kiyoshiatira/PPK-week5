@@ -7,41 +7,34 @@ Aplikasi web Expense Tracker sederhana yang membantu mahasiswa mengelola keuanga
 DUITku dirancang khusus untuk mahasiswa yang ingin mengelola keuangan pribadinya secara sederhana melalui aplikasi web. Setiap pengguna membuat akun dan login untuk mencatat transaksi keuangannya sendiri. Data transaksi terhubung langsung dengan pengguna yang sedang login, sehingga setiap pengguna hanya dapat mengakses dan mengelola datanya sendiri. Aplikasi mempertahankan sesi login pengguna selama masih aktif, dan menggunakan cookies untuk menyimpan minimal satu preferensi tampilan pengguna.
 
 **Tim Proyek**
-- Project Manager: Thariq
-- Programmer: Kiyoshi Akila Tira
-- Programmer: Revanska Muhammad Athallah
+- Project Manager: Kiyoshi AKila Tira
+- Programmer 1:  Aprilia Abel Cleodora
+- Programmer 2: Arsy Thariq Munawar
+- Programmer 3: Revanska Muhammad Athallah
 
 ## User Story
 
-1. Sebagai mahasiswa, saya ingin membuat akun dan masuk ke dalam aplikasi, sehingga saya bisa mencatat pemasukan dan pengeluaran saya sendiri.
-2. Sebagai pengguna, saya ingin data transaksi saya terhubung dengan akun saya, sehingga hanya saya yang dapat mengakses dan mengelola data milik saya sendiri.
-3. Sebagai pengguna, saya ingin sesi login saya tetap dipertahankan selama masih berlaku, sehingga saya tidak perlu login ulang setiap kali membuka aplikasi.
-4. Sebagai pengguna, saya ingin aplikasi menyimpan minimal satu preferensi saya menggunakan cookies, sehingga pengalaman menggunakan aplikasi lebih personal.
-5. Sebagai pengguna, saya ingin menambahkan, mengubah, menghapus, dan melihat transaksi keuangan saya melalui dashboard, sehingga saya bisa mengelola catatan keuangan saya dengan mudah.
-6. Sebagai pengguna, saya ingin melihat riwayat transaksi saya, sehingga saya bisa memantau arus kas saya.
-7. Sebagai pengguna, saya ingin melihat kondisi keuangan saya melalui saldo, total pemasukan, dan total pengeluaran, sehingga saya mengetahui kondisi keuangan saya dengan cepat.
-
 ## Software Requirement Specification (SRS)
+## SRS-C: Budget Bulanan
 
-### Kiyoshi Akila Tira
+| ID | Fitur | Deskripsi | Penanggung Jawab |
+|---|---|---|---|
+| SRS-C0 | Verifikasi implementasi AJAX | Memeriksa bahwa dashboard, manajemen transaksi, dan filter sudah melakukan update data tanpa reload halaman penuh (client-side fetch). Menjadi prasyarat sebelum SRS-C1–C4 dikerjakan | Anggota 3 |
+| SRS-C1 | Set budget bulanan | Form input nominal budget per bulan. Satu user hanya dapat memiliki satu budget aktif per bulan (validasi duplikasi) | Anggota 1 |
+| SRS-C2 | Edit & hapus budget | Update dan hapus budget milik sendiri, dengan validasi kepemilikan data | Anggota 2 |
+| SRS-C3 | Riwayat budget bulanan | Menampilkan daftar budget yang pernah dibuat, dikelompokkan per bulan | Anggota 2 |
+| SRS-C4 | Pantau penggunaan budget | Menghitung total pengeluaran (expense) pada bulan berjalan dan membandingkannya dengan nominal budget yang ditetapkan, lengkap dengan indikator peringatan jika pengeluaran melebihi budget | Anggota 3 |
 
-| SRS | Kebutuhan | User Story |
-|---|---|---|
-| SRS 1 | Registrasi akun | Sebagai mahasiswa, saya ingin membuat akun, sehingga saya bisa mulai menggunakan aplikasi dengan identitas saya sendiri. |
-| SRS 2 | Login aman | Sebagai mahasiswa, saya ingin login dengan aman, sehingga data keuangan pribadi saya tidak bisa diakses orang lain. |
-| SRS 3 | Manajemen sesi | Sebagai pengguna, saya ingin sesi login saya tetap dipertahankan selama saya aktif, sehingga saya tidak perlu login ulang setiap kali membuka aplikasi. |
-| SRS 4 | Isolasi data pengguna | Sebagai pengguna, saya ingin data transaksi saya hanya bisa diakses oleh akun saya sendiri, sehingga privasi keuangan saya terjaga. |
-| SRS 5 | Preferensi via cookies | Sebagai pengguna, saya ingin aplikasi mengingat preferensi tampilan saya lewat cookies, sehingga saya tidak perlu mengatur ulang setiap kali membuka aplikasi. |
+## Pembagian Kerja
 
-### Revanska Muhammad Athallah
+**Aprillia Abel Cleodora — SRS-C1**
+Mengimplementasikan form input budget bulanan beserta validasi agar satu user tidak dapat membuat lebih dari satu budget pada bulan yang sama.
 
-| SRS | Kebutuhan | User Story |
-|---|---|---|
-| SRS 6 | Tambah transaksi | Sebagai pengguna, saya ingin menambahkan catatan pemasukan atau pengeluaran, sehingga data transaksi saya selalu up-to-date. |
-| SRS 7 | Edit transaksi | Sebagai pengguna, saya ingin mengubah catatan transaksi yang sudah ada, sehingga data transaksi saya tetap akurat. |
-| SRS 8 | Hapus transaksi | Sebagai pengguna, saya ingin menghapus catatan transaksi, sehingga data transaksi saya tidak menumpuk dengan entri yang salah. |
-| SRS 9 | Riwayat transaksi | Sebagai pengguna, saya ingin melihat riwayat transaksi saya, sehingga saya bisa memantau arus kas saya. |
-| SRS 10 | Dashboard ringkasan keuangan | Sebagai pengguna, saya ingin melihat ringkasan keuangan di dashboard (saldo, total pemasukan, total pengeluaran), sehingga saya mengetahui kondisi keuangan saya dengan cepat. |
+**Arsy Thariq Munawar — SRS-C2, SRS-C3**
+Mengimplementasikan fitur edit dan hapus budget (dengan validasi kepemilikan), serta halaman riwayat budget yang menampilkan data budget per bulan.
+
+**Revanska Muhammad Athallah — SRS-C0, SRS-C4**
+Memverifikasi implementasi AJAX pada dashboard, manajemen transaksi, dan filter sebagai prasyarat, kemudian mengimplementasikan logika perhitungan total pengeluaran bulan berjalan dan integrasinya ke dashboard dalam bentuk indikator/progress penggunaan budget terhadap batas yang ditetapkan.
 
 ## Tech Stack
 
