@@ -18,7 +18,13 @@ export default async function BudgetPage() {
     <main className="p-6">
       <h1 className="text-2xl font-bold mb-6">Budget Bulanan</h1>
 
-      <form action={createBudget} className="space-y-4 max-w-md">
+      <form
+        action={async (formData) => {
+          "use server";
+          await createBudget(formData);
+        }}
+        className="space-y-4 max-w-md"
+      >
         <div>
           <label
             htmlFor="amount"
