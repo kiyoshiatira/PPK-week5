@@ -55,7 +55,7 @@ export default function BudgetUsage() {
           Belum ada budget untuk bulan ini. Pengeluaran bulan ini:{' '}
           {formatRupiah(data.spent)}.
         </p>
-        <Link href="/dashboard/budget" className="text-blue-500 text-sm underline">
+        <Link href="/dashboard/budgets" className="text-blue-500 text-sm underline">
           Atur budget
         </Link>
       </div>
